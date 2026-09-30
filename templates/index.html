@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Python Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="calculator-card">
+        <!-- Added value="{{ result }}" so output appears on screen -->
+        <input type="text" id="display" value="{{ result }}" placeholder="0" readonly>
+
+        <!-- Form that sends inputs to Flask -->
+        <form action="/" method="POST">
+            <div class="field">
+                <label>First Number:</label>
+                <input type="number" step="any" name="input1" required placeholder="Enter 1st value">
+            </div>
+
+            <div class="field">
+                <label>Operation:</label>
+                <select name="operation">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                    <option value="**">** (Power)</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Second Number:</label>
+                <input type="number" step="any" name="input2" required placeholder="Enter 2nd value">
+            </div>
+
+            <button type="submit" class="calc-btn">Calculate</button>
+        </form>
+    </div>
+
+</body>
+</html>
