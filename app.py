@@ -24,7 +24,7 @@ def home():
                 result = input1 + input2
 
             elif operation == '-':
-                # Fixed: Subtracting input2 from input1
+                # Subtracting input2 from input1
                 result = input1 - input2
 
             elif operation == '*':
@@ -48,7 +48,6 @@ def home():
         except ValueError:
             result = "Please enter valid numbers"
 
-    # Sends the result back to index.html
     return render_template('index.html', result=result)
 
 if __name__ == '__main__':
